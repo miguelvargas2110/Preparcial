@@ -1,0 +1,2 @@
+Nombre: Miguel, Codigo: 1001300748, sueldo: 100000
+Nombre: Andres, Codigo: 1001300749, sueldo: 1000000

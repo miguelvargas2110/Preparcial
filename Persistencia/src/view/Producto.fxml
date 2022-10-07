@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControladorProducto">
+    <children>
+        <Label layoutX="85.0" layoutY="12.0" text="Nuevo Producto">
+            <font>
+                <Font name="Ebrima Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="75.0" layoutY="55.0" text="Nombre" />
+        <TextField fx:id="txtNombreProducto" layoutX="75.0" layoutY="75.0" prefHeight="27.0" prefWidth="170.0">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </TextField>
+        <Label layoutX="75.0" layoutY="120.0" text="Codigo" />
+        <TextField fx:id="txtCodigoProducto" layoutX="75.0" layoutY="140.0" prefHeight="26.0" prefWidth="170.0" />
+        <Label layoutX="75.0" layoutY="185.0" minHeight="-Infinity" minWidth="-Infinity" text="Valor" />
+        <TextField fx:id="txtValorProducto" layoutX="75.0" layoutY="205.0" prefHeight="26.0" prefWidth="170.0" />
+        <Label fx:id="lblConfirmarProducto" alignment="CENTER" layoutX="28.0" layoutY="250.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="245.0" text="." />
+        <Button fx:id="btnGuardarProducto" layoutX="100.0" layoutY="295.0" mnemonicParsing="false" onAction="#guardarProducto" prefHeight="26.0" prefWidth="120.0" text="Guardar Producto" />
+    </children>
+</AnchorPane>
