@@ -29,7 +29,7 @@ public class Main extends Application {
         try {
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = new Stage();
-            stage.setTitle("Creacion de Empleado");
+            stage.setTitle("Creacion de Estudiante");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

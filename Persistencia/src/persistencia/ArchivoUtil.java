@@ -158,8 +158,8 @@ public class ArchivoUtil {
 
 	@SuppressWarnings("unchecked")
 	public static Object cargarRecursoSerializado(String rutaArchivo) throws Exception {
-		Object aux = null;
-//		Empresa empresa = null;
+
+		Universidad universidad = new Universidad();
 		ObjectInputStream ois = null;
 		try {
 			// Se crea un ObjectInputStream

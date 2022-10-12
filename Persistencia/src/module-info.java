@@ -1,4 +1,4 @@
-module FlujoDeDatos2 {
+module Preparcial {
 	requires javafx.controls;
 	requires java.logging;
 	requires java.base;

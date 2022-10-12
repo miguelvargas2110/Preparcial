@@ -1,0 +1,36 @@
+oct. 12, 2022 1:17:34 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante Miguel con exito,2022-10-12
+oct. 12, 2022 1:19:24 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante Miguel con exito,2022-10-12
+oct. 12, 2022 1:20:16 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante m con exito,2022-10-12
+oct. 12, 2022 1:21:59 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante m con exito,2022-10-12
+oct. 12, 2022 1:23:01 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante m con exito,2022-10-12
+oct. 12, 2022 2:27:25 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante Juan con exito,2022-10-12
+oct. 12, 2022 2:30:41 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante Hola con exito,2022-10-12
+oct. 12, 2022 2:31:17 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante Pepito con exito,2022-10-12
+oct. 12, 2022 2:32:43 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante 121 con exito,2022-10-12
+oct. 12, 2022 2:35:44 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante 1 con exito,2022-10-12
+oct. 12, 2022 2:46:04 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante 121 con exito,2022-10-12
+oct. 12, 2022 2:46:12 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante 121 con exito,2022-10-12
+oct. 12, 2022 2:46:36 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante 121 con exito,2022-10-12
+oct. 12, 2022 2:49:00 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante 1213 con exito,2022-10-12
+oct. 12, 2022 2:55:31 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante Juan con exito,2022-10-12
+oct. 12, 2022 3:30:06 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante  con exito,2022-10-12
+oct. 12, 2022 3:40:25 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante Juan con exito,2022-10-12
+oct. 12, 2022 3:41:44 P. M. persistencia.ArchivoUtil guardarRegistroLog
+INFO: guardarEstudiante,Se ha guardado el estudiante Ernesto con exito,2022-10-12
