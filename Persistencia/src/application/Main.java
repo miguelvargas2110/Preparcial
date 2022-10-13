@@ -24,8 +24,8 @@ public class Main extends Application {
         }
     }
 
-    public void Empleado(){
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/Empleado.fxml"));
+    public void Estudiante(){
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/Estudiante.fxml"));
         try {
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = new Stage();
@@ -37,8 +37,8 @@ public class Main extends Application {
         }
     }
 
-    public void Producto(){
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/Producto.fxml"));
+    public void Programa(){
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/Programa.fxml"));
         try {
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = new Stage();

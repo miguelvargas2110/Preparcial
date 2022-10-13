@@ -12,9 +12,7 @@ public class ControladorMain implements Initializable {
 
     Main aplicacion = new Main();
 
-    private Universidad universidad = new Universidad("A");
+    public void onActionEstudiante(){ aplicacion.Estudiante(); }
 
-    public void onActionEmpleado(){ aplicacion.Empleado(); }
-
-    public void onActionProducto() { aplicacion.Producto(); }
+    public void onActionPrograma() { aplicacion.Programa(); }
 }

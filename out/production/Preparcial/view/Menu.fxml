@@ -15,7 +15,7 @@
             </Label>
             <HBox alignment="CENTER" prefHeight="200.0" prefWidth="300.0" spacing="20.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onActionEmpleado" text="Crear Empleado" />
+                  <Button mnemonicParsing="false" onAction="#onActionEstudiante" text="Crear Estudiante" />
                   <Button mnemonicParsing="false" onAction="#onActionProducto" text="Crear Producto" />
                </children>
             </HBox>

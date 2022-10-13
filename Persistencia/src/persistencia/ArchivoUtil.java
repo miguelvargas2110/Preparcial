@@ -15,6 +15,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Enumeration;
+import java.util.Properties;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -208,7 +210,42 @@ public class ArchivoUtil {
 		codificadorXML = new XMLEncoder(new FileOutputStream(rutaArchivo));
 		codificadorXML.writeObject(objeto);
 		codificadorXML.close();
+	}
 
+	public static ArrayList<String> leerPropertiesModalidad(String rutaArchivo) throws IOException {
+
+		Properties propiedades = new Properties();
+
+		ArrayList<String> modalidades = new ArrayList<>();
+		InputStream entrada = null;
+		try {
+			/* Leemos el archivo con InputStream */
+			entrada = new FileInputStream(
+					rutaArchivo);
+
+			/*
+			 * Cargamos nuestro archivo en el objeto propiedades instanciado anteriormente
+			 */
+			propiedades.load(entrada);
+
+			Enumeration<Object> claves = propiedades.keys();
+
+
+			while (claves.hasMoreElements()) {
+				Object clave = claves.nextElement();
+				modalidades.add(propiedades.get(clave).toString());
+			}
+
+			/* Cerramos nuestro InputStream */
+
+
+		} catch (IOException e) {
+			e.printStackTrace();
+
+		} finally {
+			entrada.close();
+		}
+		return modalidades;
 	}
 
 

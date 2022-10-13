@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import model.Estudiante;
+import model.Programa;
 import model.Universidad;
 import persistencia.Persistencia;
 
@@ -27,6 +28,8 @@ public class Singleton {
         cargarDatosDesdeArchivos();
         guardarResourceBinario();
         cargarResourceBinario();
+        cargarResourceXML();
+        guardarResourceXML();
         //4. Guardar y Cargar el recurso serializable XML
         //Siempre se debe verificar si la raiz del recurso es null
         if(universidad == null) {
@@ -35,17 +38,23 @@ public class Singleton {
         }
 
     }
-
+    public ArrayList<String> cargarModalidades() throws IOException {
+        ArrayList<String> modalidades = Persistencia.cargarModalidadesProperties();
+        return modalidades;
+    }
     public void guardarRegistroLog(String mensaje, int nivel, String accion){
         Persistencia.guardaRegistroLog(mensaje, nivel, accion);
     }
 
     public void guardarEstudianteArchivo(Estudiante estudiante) throws IOException {
-        System.out.println(universidad);
         universidad.getEstudiantes().add(estudiante);
         Persistencia.guardarEstudiantes(universidad.getEstudiantes());
     }
 
+    public void guardarPrograma(Programa programa){
+        universidad.getProgramas().add(programa);
+        Persistencia.guardarRecursoUniversidadXML(universidad);
+    }
     private void cargarDatosDesdeArchivos() {
 
         try {
@@ -60,25 +69,25 @@ public class Singleton {
 
     public void cargarResourceBinario() {
 
-        universidad = Persistencia.cargarRecursoBancoBinario();
+        universidad = Persistencia.cargarRecursoUniversidadBinario();
     }
 
 
     public void guardarResourceBinario() {
 
-        Persistencia.guardarRecursoBancoBinario(universidad);
+        Persistencia.guardarRecursoUniversidadBinario(universidad);
     }
 
 
     public void cargarResourceXML() {
 
-        universidad = Persistencia.cargarRecursoBancoXML();
+        universidad = Persistencia.cargarRecursoUniversidadXML();
     }
 
 
     public void guardarResourceXML() {
 
-        Persistencia.guardarRecursoBancoXML(universidad);
+        Persistencia.guardarRecursoUniversidadXML(universidad);
     }
 
 
@@ -103,9 +112,20 @@ public class Singleton {
 
     }
 
+    public Programa crearPrograma(String nombre, String documento, String modalidad){
+        Programa programa;
+        programa = getUniversidad().crearPrograma(nombre, documento, modalidad);
+        return programa;
+    }
+
     public Estudiante buscarEstudiante(String codigo) {
         Estudiante estudiante = getUniversidad().buscarEstudiante(codigo);
         return estudiante;
+    }
+
+    public Programa buscarPrograma(String codigo) {
+        Programa programa = getUniversidad().buscarPrograma(codigo);
+        return programa;
     }
 
 }

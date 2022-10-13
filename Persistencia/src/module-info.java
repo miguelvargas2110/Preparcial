@@ -8,4 +8,6 @@ module Preparcial {
 
     opens controller to javafx.fxml;
 	opens application to javafx.graphics, javafx.fxml;
+	exports model;
+	opens model to javafx.fxml, javafx.graphics;
 }
