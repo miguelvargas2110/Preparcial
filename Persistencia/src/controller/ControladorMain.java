@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControladorMain implements Initializable {
+public class ControladorMain implements Serializable {
 
     Main aplicacion = new Main();
 

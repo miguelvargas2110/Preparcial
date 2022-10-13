@@ -1,18 +1,11 @@
 package persistencia;
 
 
+import model.Universidad;
+
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Enumeration;
@@ -22,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class ArchivoUtil {
+public class ArchivoUtil implements Serializable {
 
 
 	/**
@@ -167,7 +160,7 @@ public class ArchivoUtil {
 			// Se crea un ObjectInputStream
 			ois = new ObjectInputStream(new FileInputStream(rutaArchivo));
 
-			aux = ois.readObject();
+			universidad = (Universidad) ois.readObject();
 
 		} catch (Exception e2) {
 			throw e2;
@@ -175,7 +168,7 @@ public class ArchivoUtil {
 			if (ois != null)
 				ois.close();
 		}
-		return aux;
+		return universidad;
 	}
 
 	public static void salvarRecursoSerializado(String rutaArchivo, Object object) throws Exception {
