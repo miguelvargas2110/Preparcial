@@ -26,8 +26,6 @@ public class Singleton {
 
     private Singleton() {
         cargarDatosDesdeArchivos();
-        guardarResourceBinario();
-        cargarResourceBinario();
         cargarResourceXML();
         guardarResourceXML();
         //4. Guardar y Cargar el recurso serializable XML
@@ -67,16 +65,9 @@ public class Singleton {
         }
     }
 
-    public void cargarResourceBinario() {
-
-        universidad = Persistencia.cargarRecursoUniversidadBinario();
-    }
 
 
-    public void guardarResourceBinario() {
 
-        Persistencia.guardarRecursoUniversidadBinario(universidad);
-    }
 
 
     public void cargarResourceXML() {
