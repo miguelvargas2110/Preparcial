@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import model.Estudiante;
-import model.services.Singleton;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -56,10 +55,10 @@ public class ControladorEstudiante implements  Serializable{
                 notasEstudiantes.add(Double.valueOf(txtNota1.getText()));
                 notasEstudiantes.add(Double.valueOf(txtNota2.getText()));
                 notasEstudiantes.add(Double.valueOf(txtNota3.getText()));
-                Estudiante estudiante = Singleton.getInstance().crearEstudiante(nombreEstudiante, codigoEstudiante, notasEstudiantes);
-                Singleton.getInstance().guardarEstudianteArchivo(estudiante);
+                Estudiante estudiante = ModelFactoryController.getInstance().crearEstudiante(nombreEstudiante, codigoEstudiante, notasEstudiantes);
+                ModelFactoryController.getInstance().guardarEstudianteArchivo(estudiante);
                 lblConfirmarEstudiante.setText("Se ha guardado el estudiante!");
-                Singleton.getInstance().guardarRegistroLog("Se ha guardado el estudiante " + nombreEstudiante + " con exito", 1, "guardarEstudiante");
+                ModelFactoryController.getInstance().guardarRegistroLog("Se ha guardado el estudiante " + nombreEstudiante + " con exito", 1, "guardarEstudiante");
                 txtCodigoEstudiante.setText("");
                 txtNombreEstudiante.setText("");
                 txtNota1.setText("");
@@ -75,7 +74,7 @@ public class ControladorEstudiante implements  Serializable{
     }
     @FXML
     private void buscarEstudiante(ActionEvent event) {
-        Estudiante estudiante = Singleton.getInstance().buscarEstudiante(txtBuscarEstudiante.getText());
+        Estudiante estudiante = ModelFactoryController.getInstance().buscarEstudiante(txtBuscarEstudiante.getText());
         if(estudiante == null){
             JOptionPane.showMessageDialog(null,  "Porfavor, ingrese el codigo de un estudiante registrado");
         }else{

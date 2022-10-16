@@ -9,13 +9,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Persistencia implements Serializable {
-	public static final String RUTA_ARCHIVO_ESTUDIANTES = "Persistencia/src/persistencia/archivoEstudiantes.txt";
-	public static final String RUTA_ARCHIVO_LOG = "Persistencia/src/persistencia/universidadLog.txt";
-	public static final String RUTA_ARCHIVO_OBJETOS = "Persistencia/src/persistencia/archivoObjetos.txt";
+	public static final String RUTA_ARCHIVO_ESTUDIANTES = "Preparcial/Resources/archivoEstudiantes.txt";
+	public static final String RUTA_ARCHIVO_LOG = "Preparcial/Resources/universidadLog.txt";
+	public static final String RUTA_ARCHIVO_OBJETOS = "Preparcial/Resources/archivoObjetos.txt";
 
-	public static final String RUTA_ARCHIVO_MODELO_UNIVERSIDAD_XML = "Persistencia/src/persistencia/model.xml";
+	public static final String RUTA_ARCHIVO_MODELO_UNIVERSIDAD_XML = "Preparcial/Resources/model.xml";
 
-	public static final String RUTA_ARCHIVO_PROPERTIES_MODALIDADES = "Persistencia/src/persistencia/modalidades.properties";
+	public static final String RUTA_ARCHIVO_PROPERTIES_MODALIDADES = "Preparcial/Resources/modalidades.properties";
 
 
 	public static void cargarDatosArchivos(Universidad universidad) throws FileNotFoundException, IOException {

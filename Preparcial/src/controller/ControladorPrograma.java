@@ -9,7 +9,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import model.Programa;
-import model.services.Singleton;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -19,7 +18,7 @@ import java.util.ResourceBundle;
 
 public class ControladorPrograma implements Initializable {
 
-    ArrayList<String> modalidades = Singleton.getInstance().cargarModalidades();
+    ArrayList<String> modalidades = ModelFactoryController.getInstance().cargarModalidades();
     @FXML
     private ChoiceBox cbModalidad;
     @FXML
@@ -47,8 +46,8 @@ public class ControladorPrograma implements Initializable {
             String nombrePrograma = txtNombrePrograma.getText();
             String codigoPrograma = txtCodigoPrograma.getText();
             String modalidad = cbModalidad.getValue().toString();
-            Programa programa = Singleton.getInstance().crearPrograma(nombrePrograma, codigoPrograma, modalidad);
-            Singleton.getInstance().guardarPrograma(programa);
+            Programa programa = ModelFactoryController.getInstance().crearPrograma(nombrePrograma, codigoPrograma, modalidad);
+            ModelFactoryController.getInstance().guardarPrograma(programa);
             lblConfirmarPrograma.setText("Se ha guardado el Programa!");
             txtCodigoPrograma.setText("");
             txtNombrePrograma.setText("");
@@ -60,7 +59,7 @@ public class ControladorPrograma implements Initializable {
     }
     @FXML
     private void buscarPrograma(ActionEvent event) {
-        Programa programa = Singleton.getInstance().buscarPrograma(txtBuscarPrograma.getText());
+        Programa programa = ModelFactoryController.getInstance().buscarPrograma(txtBuscarPrograma.getText());
         if(programa == null){
             JOptionPane.showMessageDialog(null,  "Porfavor, ingrese el codigo de un Programa registrado");
         }else{

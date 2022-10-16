@@ -1,4 +1,4 @@
-package model.services;
+package controller;
 
 
 import java.io.IOException;
@@ -9,38 +9,38 @@ import model.Programa;
 import model.Universidad;
 import persistencia.Persistencia;
 
-public class Singleton {
+public class ModelFactoryController {
 
-        private static Singleton instancia;
+    private static ModelFactoryController instancia;
 
     Universidad universidad = new Universidad();
 
 
-    //------------------------------  Singleton ------------------------------------------------
-    public static Singleton getInstance(){
-        if(instancia == null){
-            instancia = new Singleton();
+    //------------------------------  ModelFactoryController ------------------------------------------------
+    public static ModelFactoryController getInstance() {
+        if (instancia == null) {
+            instancia = new ModelFactoryController();
         }
         return instancia;
     }
 
-    private Singleton() {
+    private ModelFactoryController() {
         cargarDatosDesdeArchivos();
         cargarResourceXML();
         guardarResourceXML();
-        //4. Guardar y Cargar el recurso serializable XML
-        //Siempre se debe verificar si la raiz del recurso es null
-        if(universidad == null) {
+        if (universidad == null) {
             System.out.println("es null");
             guardarResourceXML();
         }
 
     }
+
     public ArrayList<String> cargarModalidades() throws IOException {
         ArrayList<String> modalidades = Persistencia.cargarModalidadesProperties();
         return modalidades;
     }
-    public void guardarRegistroLog(String mensaje, int nivel, String accion){
+
+    public void guardarRegistroLog(String mensaje, int nivel, String accion) {
         Persistencia.guardaRegistroLog(mensaje, nivel, accion);
     }
 
@@ -49,10 +49,11 @@ public class Singleton {
         Persistencia.guardarEstudiantes(universidad.getEstudiantes());
     }
 
-    public void guardarPrograma(Programa programa){
+    public void guardarPrograma(Programa programa) {
         universidad.getProgramas().add(programa);
         Persistencia.guardarRecursoUniversidadXML(universidad);
     }
+
     private void cargarDatosDesdeArchivos() {
 
         try {
@@ -65,22 +66,15 @@ public class Singleton {
         }
     }
 
-
-
-
-
-
     public void cargarResourceXML() {
 
         universidad = Persistencia.cargarRecursoUniversidadXML();
     }
 
-
     public void guardarResourceXML() {
 
         Persistencia.guardarRecursoUniversidadXML(universidad);
     }
-
 
     public Universidad getUniversidad() {
         return universidad;
@@ -90,20 +84,13 @@ public class Singleton {
         this.universidad = universidad;
     }
 
-
     public Estudiante crearEstudiante(String nombre, String codigo, ArrayList<Double> notas) {
-
-
         Estudiante estudiante;
-
         estudiante = getUniversidad().crearEstudiante(nombre, codigo, notas);
-
-
         return estudiante;
-
     }
 
-    public Programa crearPrograma(String nombre, String documento, String modalidad){
+    public Programa crearPrograma(String nombre, String documento, String modalidad) {
         Programa programa;
         programa = getUniversidad().crearPrograma(nombre, documento, modalidad);
         return programa;
