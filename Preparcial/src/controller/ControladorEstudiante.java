@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import model.Estudiante;
+import model.Universidad;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -36,6 +37,8 @@ public class ControladorEstudiante implements  Serializable{
     private Label lblNota2;
     @FXML
     private Label lblNota3;
+
+
     @FXML
     private void guardarEstudiante(ActionEvent event) throws IOException, InterruptedException {
         ArrayList<Double> notasEstudiantes = new ArrayList<>();

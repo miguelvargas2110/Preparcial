@@ -13,7 +13,7 @@ public class ModelFactoryController {
 
     private static ModelFactoryController instancia;
 
-    Universidad universidad = new Universidad();
+    Universidad universidad;
 
 
     //------------------------------  ModelFactoryController ------------------------------------------------
@@ -26,8 +26,8 @@ public class ModelFactoryController {
 
     private ModelFactoryController() {
         cargarDatosDesdeArchivos();
-        cargarResourceXML();
         guardarResourceXML();
+        cargarResourceXML();
         if (universidad == null) {
             System.out.println("es null");
             guardarResourceXML();
@@ -47,6 +47,7 @@ public class ModelFactoryController {
     public void guardarEstudianteArchivo(Estudiante estudiante) throws IOException {
         universidad.getEstudiantes().add(estudiante);
         Persistencia.guardarEstudiantes(universidad.getEstudiantes());
+        Persistencia.guardarRecursoUniversidadXML(universidad);
     }
 
     public void guardarPrograma(Programa programa) {
@@ -55,6 +56,8 @@ public class ModelFactoryController {
     }
 
     private void cargarDatosDesdeArchivos() {
+
+        universidad = new Universidad();
 
         try {
 

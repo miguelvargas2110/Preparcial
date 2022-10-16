@@ -19,7 +19,13 @@ public class Persistencia implements Serializable {
 
 
 	public static void cargarDatosArchivos(Universidad universidad) throws FileNotFoundException, IOException {
-		universidad.setEstudiantes(cargarEstudiantes());
+
+		ArrayList<Estudiante> estudiantes = cargarEstudiantes();
+
+		if(estudiantes.size() > 0){
+			universidad.getEstudiantes().addAll(estudiantes);
+		}
+
 	}
 
 	public static void guardarEstudiantes(ArrayList<Estudiante> estudiantes) throws IOException {
