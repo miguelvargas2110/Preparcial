@@ -43,7 +43,7 @@ public class Main extends Application {
         try {
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = new Stage();
-            stage.setTitle("Creacion de Producto");
+            stage.setTitle("Creacion de Programa");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
